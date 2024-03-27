@@ -52,6 +52,7 @@ canvas {
 
   --clr-main-bg: hsl(275, 100%, 97%);
   --clr-faq-bg: #fff;
+  --clr-faq-shadow: hsla(275, 100%, 23%, 10%);
   --clr-faq-question: hsl(292, 42%, 14%);
 
   --clr-faq-question-focus-hsl: 283, 83%, 54%;
@@ -76,6 +77,8 @@ main {
   background-color: var(--clr-faq-bg);
   border-radius: 0.5rem;
   padding: 1.5rem;
+
+  box-shadow: 0 2rem 3.5rem var(--clr-faq-shadow);
 }
 
 main h1::before {
