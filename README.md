@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/stefan-holmgren/fem-faq-accordion
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://stefan-holmgren.github.io/fem-faq-accordion/
 
 ## My process
 
