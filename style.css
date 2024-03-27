@@ -1,0 +1,170 @@
+/* BEGIN RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+picture,
+svg,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* END RESET */
+
+:root {
+  --fs-lg: 2rem;
+  --fs-m: 1rem;
+  --fs-s: 0.875rem;
+
+  --fw-bold: 700;
+  --fw-semi-bold: 600;
+  --fw-normal: 400;
+
+  --clr-main-bg: hsl(275, 100%, 97%);
+  --clr-faq-bg: #fff;
+  --clr-faq-question: hsl(292, 42%, 14%);
+
+  --clr-faq-question-focus-hsl: 283, 83%, 54%;
+  --clr-faq-question-focus: hsl(var(--clr-faq-question-focus-hsl));
+  --clr-faq-answer: #8b6990;
+  --clr-faq-separator: var(--clr-main-bg);
+}
+
+body {
+  font-family: "Work Sans", sans serif;
+  background: url("./assets/images/background-pattern-mobile.svg") no-repeat top center;
+  background-size: 100%;
+  background-color: var(--clr-main-bg);
+  font-size: var(--fs-m);
+  font-weight: var(--fw-normal);
+  padding: 9rem 1.5rem;
+}
+
+main {
+  background-color: var(--clr-faq-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+main h1::before {
+  display: block;
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("./assets/images/icon-star.svg") no-repeat center center / cover;
+}
+
+main h1 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+main ul {
+  padding: 1.5rem 0 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+main li {
+  display: grid;
+  grid-template-rows: 0fr 0fr;
+  transition: grid-template-rows 0.5s;
+}
+
+main li p {
+  transition: padding-top 0.5s;
+  padding-top: 0rem;
+  font-size: var(--fs-s);
+  line-height: 1.5;
+  color: var(--clr-faq-answer);
+  overflow: hidden;
+}
+
+main li[aria-expanded="true"] button::after {
+  background-image: url("./assets/images/icon-minus.svg");
+}
+
+main li[aria-expanded="true"] {
+  grid-template-rows: 0fr 1fr;
+}
+
+main li[aria-expanded="true"] p {
+  padding-top: 1.25rem;
+}
+
+main li:not(:first-child) {
+  border-top: 1px solid var(--clr-faq-separator);
+  padding-top: 1.25rem;
+}
+
+main li button {
+  background: none;
+  border: none;
+  text-align: left; /* to align the text with the icon */
+  font-size: var(--fs-m);
+  font-weight: var(--fw-semi-bold);
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--clr-faq-question);
+}
+
+main li button:focus,
+main li button:hover {
+  cursor: pointer;
+  color: var(--clr-faq-question-focus);
+}
+
+main li button:focus {
+  outline: 1px solid hsla(var(--clr-faq-question-focus-hsl), 0.2);
+  outline-offset: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+main li button::after {
+  display: block;
+  content: "";
+  background: url("./assets/images/icon-plus.svg") no-repeat center center / cover;
+  width: 1.875rem;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+}
