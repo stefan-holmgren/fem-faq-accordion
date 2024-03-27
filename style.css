@@ -58,6 +58,8 @@ canvas {
   --clr-faq-question-focus: hsl(var(--clr-faq-question-focus-hsl));
   --clr-faq-answer: #8b6990;
   --clr-faq-separator: var(--clr-main-bg);
+
+  --app-expand-duration: 0.2s;
 }
 
 body {
@@ -101,11 +103,11 @@ main ul {
 main li {
   display: grid;
   grid-template-rows: 0fr 0fr;
-  transition: grid-template-rows 0.5s;
+  transition: grid-template-rows var(--app-expand-duration);
 }
 
 main li p {
-  transition: padding-top 0.5s;
+  transition: padding-top var(--app-expand-duration);
   padding-top: 0rem;
   font-size: var(--fs-s);
   line-height: 1.5;
