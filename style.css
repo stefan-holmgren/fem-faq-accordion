@@ -80,7 +80,7 @@ main h1::before {
   display: block;
   content: "";
   width: 1.5rem;
-  height: 1.5rem;
+  aspect-ratio: 1 / 1;
   background: url("./assets/images/icon-star.svg") no-repeat center center / cover;
 }
 
@@ -165,6 +165,38 @@ main li button::after {
   flex-shrink: 0;
 }
 
+/* TABLET */
+@media (min-width: 48rem) {
+  :root {
+    --fs-lg: 3.5rem;
+    --fs-m: 1.125rem;
+    --fs-s: 1rem;
+  }
+
+  html {
+    overflow-y: scroll;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    padding-top: 10.46875rem;
+  }
+
+  main {
+    max-width: 37.5rem;
+    padding: 2.5rem;
+  }
+
+  main h1::before {
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+  }
+}
+
 /* DESKTOP */
-@media (min-width: 768px) {
+@media (min-width: 90rem) {
+  body {
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+  }
 }
